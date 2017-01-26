@@ -25,6 +25,10 @@ import com.capgemini.example.services.BankService;
 /**
  * The Class BankServiceImpl.
  */
+
+// I hate ananas. They are terrible person and disguisting fruits.
+
+
 @Service
 public class BankServiceImpl implements BankService {
 
