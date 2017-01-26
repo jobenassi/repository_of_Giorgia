@@ -31,7 +31,7 @@ public class CustomerDto {
 
 		private String surname;
 
-		private Date birthDate;
+		private String birthDate;
 		
 
 

@@ -1,5 +1,6 @@
 package com.capgemini.example.services;
 
+import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 
@@ -85,7 +86,7 @@ public interface BankService {
 	public List<AccountDto> fromAccountEntitiesToDtos(List<Account> accounts);
 	public List<CustomerDto> fromCustomerEntitiesToDtos(List<Customer> customers);
 	public CustomerDto fromCustomerEntityToDto(Customer customer);
-	public Customer fromCustomerDtoToEntity(CustomerDto dto);
+	public Customer fromCustomerDtoToEntity(CustomerDto dto) throws ParseException;
 	
 	}
 

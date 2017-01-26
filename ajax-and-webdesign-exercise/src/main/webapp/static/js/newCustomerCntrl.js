@@ -10,11 +10,11 @@ $(document).ready(function() {
 		function toDate(selector){
 			
 			var from = $(selector).val().split("-");
-			return new Date(from[2], from[1]-1, from[0]).getTime();
+			return new Date(from[2], from[1]-1, from[0]);
 			
 		}
 	
-		var formattedDate = toDate("#new-bdate");
+		var formattedDate = toDate("#new-bdate").toString;
 		var jsonDate = formattedDate;
 //		var date = new Date("($('#new-bdate').val()").toJSON();
 		

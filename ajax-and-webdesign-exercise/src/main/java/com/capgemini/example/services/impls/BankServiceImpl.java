@@ -1,5 +1,8 @@
 package com.capgemini.example.services.impls;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -122,13 +125,16 @@ public class BankServiceImpl implements BankService {
 
 	public List<CustomerDto> fromCustomerEntitiesToDtos(List<Customer> customers) {
 		List<CustomerDto> dtos = new ArrayList<CustomerDto>();
-
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+		
 		for (Customer item : customers) {
 			CustomerDto dto = new CustomerDto();
 			dto.setId(item.getId());
 			dto.setName(item.getName());
 			dto.setSurname(item.getSurname());
-			dto.setBirthDate(item.getBirthDate());
+			Date dateObject = item.getBirthDate();
+			String dateString = df.format(dateObject);
+			dto.setBirthDate(dateString);
 			dtos.add(dto);
 		}
 		return dtos;
@@ -140,17 +146,23 @@ public class BankServiceImpl implements BankService {
 			dto.setId(customer.getId());
 			dto.setName(customer.getName());
 			dto.setSurname(customer.getSurname());
-			dto.setBirthDate(customer.getBirthDate());
+			DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+			Date dateObject = customer.getBirthDate();
+			String dateString = df.format(dateObject);
+			dto.setBirthDate(dateString);
 			return dto;
 	}
 	
-	public Customer fromCustomerDtoToEntity(CustomerDto dto) {
+	public Customer fromCustomerDtoToEntity(CustomerDto dto) throws ParseException {
 		
 	 	Customer customer = new Customer();
 	 	customer.setId(dto.getId());
 	 	customer.setName(dto.getName());
 	 	customer.setSurname(dto.getSurname());
-	 	customer.setBirthDate(dto.getBirthDate());
+	 	String dateString = dto.getBirthDate();
+	 	DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+	 	Date dateObject = df.parse(dateString);
+	 	customer.setBirthDate(dateObject);
 
 		return customer;
 }

@@ -1,5 +1,6 @@
 package com.capgemini.jeeapp.controller;
 
+import java.text.ParseException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -77,7 +78,7 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(value = "/saveCustomer", method = RequestMethod.POST)
-	public @ResponseBody String saveCustomer(@RequestBody CustomerDto customerDto) {
+	public @ResponseBody String saveCustomer(@RequestBody CustomerDto customerDto) throws ParseException {
 		
 		Customer customer = bankService.fromCustomerDtoToEntity(customerDto);
 			
