@@ -39,7 +39,7 @@ public class CustomerController {
 	}
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index() {
-	    return "dialog";
+	    return "index";
 	}
 	
 	@RequestMapping(value = "/newCustomer", method = RequestMethod.GET)
