@@ -46,6 +46,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Customer {
 	
+	//testCustomer
+	
 	/** The id. */
 	@Id
 	private Long id;
