@@ -20,7 +20,7 @@ public class StaticMethodsAndVariables {
 	public static final String TABLE_NAME_CUSTOMER_PREFIX = "CUSTOMER_OF_";
 
 	/** The Constant YOUR_NAME. */
-	//TODO: Al posto di "" inserire il proprio nome in maiuscolo
+
 	public static final String YOUR_NAME = "GIORGIA"; 
 
 	/** The Constant TABLE_NAME_ACCOUNT. */
